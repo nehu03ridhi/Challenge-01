@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Challenge #01 </title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+		body{
+			margin: 0;
+			padding: 0;
+			font-family: "Poppins", sans-serif;
+		}
+		input{
+			width: 100%;
+			display: block;
+			margin-top: 8px;
+			padding: 19px 27px 19px 46px;
+			border: 1px solid #ccc;
+			border-radius: 20px;
+			transition: 0.3s;
+			font-size: 16px;
+			box-sizing: border-box;
+			margin-bottom: 10px;
+		}
+		input::placeholder{
+			font-size: 16px;
+		}
+		input:is(:focus-visible, :hover){
+			outline: 1px solid #677b54;
+		}
+		.input-group input:focus-visible + .input-icon{
+			color: #677b54;
+		}
+		label.input-label{
+			text-transform: capitalize;
+			color: rgba(0, 0, 0, 0.8);
+			font-weight: 500;
+		}
+		.input-group.position-relative{
+			position: relative;
+		}
+		.input-group .input-icon{
+		    position: absolute;
+		    top: 17px;
+		    font-size: 20px;
+		    left: 20px;
+		    color: #828482;
+		}
+		.text-capitalize{
+			text-transform: capitalize;
+		}
+		.main-section{
+			height: 100%;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr); 
+			width: 100%;
+			background-color: #e9f8e5;
+		}
+		.main-section .image-area, .form-box-logo{
+			display: grid;
+		}
+		:is(.image-area img, .form-box-logo img){
+			width: 300px;
+			place-self: center;
+		}
+		.main-section .form-area{
+			background-color: #fff;
+			box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+			border-top-left-radius: 25px;
+			border-bottom-left-radius: 25px;
+			padding: 50px 100px;
+		}
+		.main-section .form-area .form-logo{
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			justify-content: center;
+			margin-bottom: 40px;
+		}
+		.main-section .form-area .form-logo .logo{
+			width: 24px;
+		}
+		.main-section .form-area .form-logo .logo-text{
+			font-size: 20px;
+			font-weight: 500;
+		}
+		.main-section .form-area .title-text{
+			font-size: 24px;
+			margin-bottom: 50px;
+			margin-top: 0;
+			text-transform: capitalize;
+			text-align: center;
+			font-weight: 600;
+		}
+		.main-section .site-btn{
+			width: 100%;
+		    border-radius: 20px;
+		    padding: 13px;
+		    margin-top: 30px;
+		    background: #677b54;
+		    color: #fff;
+		    font-size: 17px;
+		    border: none;
+		}
+		.main-section .bottom-heading{
+			text-align: center;
+		    font-size: 20px;
+		    font-weight: 500;
+		    color: #ccc;
+		}
+		.main-section .bottom-area{
+			display: grid;
+		}
+		.main-section .bottom-area img{
+			width: 150px;
+			place-self: center;
+		}
+		.main-section .bottom-area p{
+			font-size: 12px;
+    		text-align: center;
+		}
+		.main-section .bottom-area span{
+			color: #677b54;
+			font-weight: 600;
+		}
+
+		/* media query */
+
+		@media only screen and (max-width: 1024px) {
+			.main-section .form-area {
+				padding: 50px;
+			}
+		}
+		@media only screen and (max-width: 767px) {
+			.main-section{
+				grid-template-columns: repeat(1, 1fr);
+				background-color: #fff;
+			}
+			.main-section .form-area{
+				border-radius: 0;
+				box-shadow: none;
+			}
+			.main-section .image-area{
+				display: none;
+			}
+			.main-section .form-area .form-logo .logo{
+				width: 40px;
+			}
+			.main-section .form-area .form-logo .logo-text{
+				font-size: 30px;
+			}
+		}
+		@media only screen and (min-width: 767px) {
+			.main-section .form-box-logo{
+				display: none;
+			}
+		}
+	</style>
+</head>
+<body>
+	<section class="main-section">	
+			<div class="image-area">
+				<img src="images/Autumn-amico.png" title="" alt="image"/>
+			</div>
+			<div class="form-area">
+				<div>
+					<div class="form-logo">
+						<img src="images/Vector.png" class="logo" title="" alt="image"/>
+						<span class="logo-text">Leaf</span>
+					</div>
+					<div class="form-box-logo">
+						<img src="images/Autumn-amico.png" title="" alt="image"/>
+					</div>
+					<h6 class="title-text">Create account</h6>
+				</div>
+				<form method="post" action="">
+					<div class="form-group">
+						<label class="input-label">full name</label>
+						<div class="input-group position-relative">
+							<input type="text" name="full-name" placeholder="Enter Full Name"/>
+							<i class="ri-user-line input-icon"></i>
+						</div>
+						<label class="input-label">email</label>
+						<div class="input-group position-relative">
+							<input type="text" name="email" placeholder="Enter Your Email"/>
+							<i class="ri-mail-line input-icon"></i>
+						</div>
+						<label class="input-label">password</label>
+						<div class="input-group position-relative">
+							<input type="text" name="password" placeholder="Enter Your Password"/>
+							<i class="ri-door-lock-line input-icon"></i>
+						</div>
+					</div>
+					<button class="site-btn"> Sign-Up </button>					
+				</form>
+				<h5 class="bottom-heading"> - OR - </h5>
+				<div class="bottom-area">
+					<img src="images/bottom-image.png" alt="image3">
+					<p> Already have an account? <span class="login-text"> Login </span> </p>
+				</div>
+			</div>		
+	</section>
+</body>
+</html>
